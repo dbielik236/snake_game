@@ -102,7 +102,9 @@ def check_collisions(snake):
     return False
 
 def game_over():
-    pass
+    canvas.delete(ALL)
+    canvas.create_text(canvas.winfo_width()/2, canvas.winfo_height()/2, 
+        font=('consolas', 70), text="GAME OVER", fill="red", tag="gameover")
 
 window = Tk()
 window.title("Snake Game 3000")
@@ -133,7 +135,6 @@ window.bind('<Left>', lambda event: change_direction('left'))
 window.bind('<Right>', lambda event: change_direction('right'))
 window.bind('<Up>', lambda event: change_direction('up'))
 window.bind('<Down>', lambda event: change_direction('down'))
-
 
 snake = Snake()
 food = Food()
